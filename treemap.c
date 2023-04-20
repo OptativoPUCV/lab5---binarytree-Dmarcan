@@ -204,7 +204,7 @@ Pair * nextTreeMap(TreeMap * tree) {
         current=current->parent;
             
     }
-    return current->parent->pair;//porque no lo puedo sacar?
+    return NULL;//porque no lo puedo sacar?
 }
 /*
 
