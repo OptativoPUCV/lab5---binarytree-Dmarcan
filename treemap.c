@@ -190,7 +190,7 @@ Pair * nextTreeMap(TreeMap * tree) {
         tree->current=minimo;
         return minimo->pair;
     }
-    if(tree->current->parent->right==tree->current)return NULL;
+    //if(tree->current->parent->right==tree->current)return NULL;
     TreeNode * current=tree->current;
     while (current!=NULL)
     {
