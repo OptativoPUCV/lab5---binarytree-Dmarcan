@@ -187,11 +187,13 @@ Pair * nextTreeMap(TreeMap * tree) {
     if (tree->current->right!=NULL)
     {
         TreeNode * minimo=minimum(tree->current->right);
+        /*
         if (minimo!=tree->current->right)
         {
             tree->current=minimo;
             return minimo->pair;
         }
+        */
         tree->current=tree->current->right;
         return tree->current->pair;
     }
