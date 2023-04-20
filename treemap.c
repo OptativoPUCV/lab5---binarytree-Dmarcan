@@ -54,6 +54,8 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
     TreeNode * current=tree->root;
     if (current==NULL)
     {
+        //es mas eficiente crearlo en 2 partes pero solo se va crear cuando sea necesario??
+        //o crearlo al principio de la funcion y si ya existe la clave se libera memoria del nodo??
         TreeNode * nuevo=createTreeNode(key,value);
         tree->root=nuevo;
         tree->current=nuevo;
