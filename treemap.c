@@ -60,14 +60,14 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
         return;
     }
 
-    
+    int resultadoComp=0;
     TreeNode * parent=NULL;
     while (current!=NULL)
     {
         if (is_equal(tree,current->pair->key,key)==1)return;
         //tengo que actualizar el current??
         parent=current;
-        int resultadoComp = tree->lower_than(current->pair->key,key);
+        resultadoComp = tree->lower_than(current->pair->key,key);
         if (resultadoComp==1) current=current->right;
         else current=current->left; 
     }
