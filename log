@@ -357,3 +357,27 @@ treemap.c:149:14: error: expected expression before ‘TreeNode’
       |              ^~~~~~~~
 Compilation failed
 68c9338
+Thu 20 Apr 2023 02:26:47 AM UTC: 
+ treemap.c | 20 ++++++++++++++++----
+ 1 file changed, 16 insertions(+), 4 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘removeNode’:
+treemap.c:133:24: error: unused variable ‘hijo’ [-Werror=unused-variable]
+  133 |             TreeNode * hijo=node->right;
+      |                        ^~~~
+treemap.c:137:23: error: unused variable ‘hijo’ [-Werror=unused-variable]
+  137 |             TreeNode* hijo=node->left;
+      |                       ^~~~
+treemap.c:139:29: error: ‘hijo’ undeclared (first use in this function)
+  139 |         node->parent->right=hijo;
+      |                             ^~~~
+treemap.c:139:29: note: each undeclared identifier is reported only once for each function it appears in
+treemap.c:156:24: error: unused variable ‘hijo’ [-Werror=unused-variable]
+  156 |             TreeNode * hijo=node->right;
+      |                        ^~~~
+treemap.c:160:24: error: unused variable ‘hijo’ [-Werror=unused-variable]
+  160 |             TreeNode * hijo=node->left;
+      |                        ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+3b76320
