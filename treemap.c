@@ -223,7 +223,7 @@ Pair * nextTreeMap(TreeMap * tree) {
         }
         current=current->parent;    
     }
-    return NULL;
+    return (tree->current != NULL) ? tree->current->pair : NULL;
 }
 /*
 
