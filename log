@@ -90,3 +90,21 @@ treemap.c:66:9: note: each undeclared identifier is reported only once for each 
 cc1: all warnings being treated as errors
 Compilation failed
 9e7487a
+Thu 20 Apr 2023 12:59:27 AM UTC: 
+ treemap.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:58:61: error: ‘return’ with a value, in function returning void [-Werror=return-type]
+   58 |         if (is_equal(tree,current->pair->key,key)==1)return NULL;
+      |                                                             ^~~~
+treemap.c:53:6: note: declared here
+   53 | void insertTreeMap(TreeMap * tree, void* key, void * value) {
+      |      ^~~~~~~~~~~~~
+treemap.c:67:9: error: ‘resultadoComp’ undeclared (first use in this function)
+   67 |     if (resultadoComp==1) parent->right=nuevo;
+      |         ^~~~~~~~~~~~~
+treemap.c:67:9: note: each undeclared identifier is reported only once for each function it appears in
+cc1: all warnings being treated as errors
+Compilation failed
+8ae4577
