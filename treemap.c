@@ -192,6 +192,8 @@ Pair * nextTreeMap(TreeMap * tree) {
             tree->current=minimo;
             return minimo->pair;
         }
+        tree->current=tree->current->right;
+        return tree->current->pair;
     }
     TreeNode * current=tree->current;
     while (current!=NULL)
