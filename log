@@ -49,3 +49,9 @@ treemap.c:88:29: error: ‘map’ undeclared (first use in this function)
 treemap.c:88:29: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 e1f1197
+Thu 20 Apr 2023 12:42:30 AM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  11|6
+total_score: 15/70
+d74919a

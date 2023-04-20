@@ -85,7 +85,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
             tree->current=current;
             return current->pair;
         }
-        int resultadoComp = map->lower_than(current->pair->key,key);
+        int resultadoComp = tree->lower_than(current->pair->key,key);
         if (resultadoComp==1) current=current->right;
         else current=current->left;   
     }
