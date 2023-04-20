@@ -246,3 +246,14 @@ treemap.c:101:1: error: control reaches end of non-void function [-Werror=return
 cc1: all warnings being treated as errors
 Compilation failed
 fd15232
+Thu 20 Apr 2023 01:22:19 AM UTC: 
+ treemap.c | 1 -
+ 1 file changed, 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘minimum’:
+treemap.c:100:1: error: control reaches end of non-void function [-Werror=return-type]
+  100 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+5d9a348
