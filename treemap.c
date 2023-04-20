@@ -52,6 +52,14 @@ Para insertar un dato, primero debe realizar una búsqueda para encontrar donde 
 
 void insertTreeMap(TreeMap * tree, void* key, void * value) {
     TreeNode * current=tree->root;
+    if (current==NULL)
+    {
+        tree->root=nuevo;
+        tree->current=nuevo;
+        return;
+    }
+
+    
     TreeNode * parent=NULL;
     while (current!=NULL)
     {
