@@ -161,6 +161,7 @@ Para implementarla puede realizar una búsqueda normal y usar un puntero a nodo 
 Pair * upperBound(TreeMap * tree, void* key) {
     Pair* encontrado=searchTreeMap(tree,key);
     if (encontrado!=NULL)return encontrado;
+    return NULL;
 }
 /*
 Implemente las funciones para recorrer la estructura: Pair* firstTreeMap(TreeMap* tree) retorna el primer **Pair** del mapa (el menor). Pair* nextTreeMap(TreeMap* tree)  retornar el siguiente **Pair** del mapa a partir del puntero TreeNode* current. Recuerde actualizar este puntero.
