@@ -194,13 +194,12 @@ Pair * nextTreeMap(TreeMap * tree) {
     TreeNode * current=tree->current;
     while (current!=NULL)
     {
-        if (current->parent!=NULL)
+        if (current->parent!=NULL && current->parent->pair->key>tree->current->pair->key)
         {
             tree->current=current->parent;
             return current->parent->pair;
         }
-        current=current->parent;
-            
+        current=current->parent;    
     }
     return NULL;
 }
