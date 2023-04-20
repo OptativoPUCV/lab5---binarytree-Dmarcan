@@ -184,6 +184,7 @@ Pair * firstTreeMap(TreeMap * tree) {
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
+    if (tree==NULL || tree->current==NULL)return NULL;
     if (tree->current->right!=NULL)
     {
         TreeNode * minimo=minimum(tree->current->right);
