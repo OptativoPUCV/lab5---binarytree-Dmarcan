@@ -83,8 +83,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
         if (is_equal(tree,current->pair->key,key)==1)
         {
             tree->current=current;
-            free(current);
-            return tree->current->pair;
+            return current->pair;
         }
         int resultadoComp = tree->lower_than(current->pair->key,key);
         if (resultadoComp==1) current=current->right;
