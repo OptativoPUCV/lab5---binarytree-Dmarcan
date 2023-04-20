@@ -97,7 +97,7 @@ TreeNode * minimum(TreeNode * x){
         if (current->left==NULL)return current;
         current=current->left;
     }
-    return NULL;
+    return NULL;//porque no me deja sacar este??
 }
 
 
