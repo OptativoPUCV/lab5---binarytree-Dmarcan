@@ -109,12 +109,14 @@ void removeNode(TreeMap * tree, TreeNode* node) {
     if (node->left!=NULL && node->right!=NULL)//2hijos
     {
         TreeNode * menorSubDerecho=minimum(node->right);
+        /*
         node->pair->key=menorSubDerecho->pair->key;
         node->pair->value=menorSubDerecho->pair->value;
+        */
+        node->pair=menorSubDerecho->pair;
         removeNode(tree,menorSubDerecho);
         return;
     }
-    //1 hijo
     if (node->parent->right==node)
     {
         if (node->right!=NULL)
