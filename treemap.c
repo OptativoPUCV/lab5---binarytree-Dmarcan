@@ -159,7 +159,7 @@ Para implementarla puede realizar una búsqueda normal y usar un puntero a nodo 
 */
 
 Pair * upperBound(TreeMap * tree, void* key) {
-    pair* encontrado=searchTreeMap(tree,key);
+    Pair* encontrado=searchTreeMap(tree,key);
     if (encontrado!=NULL)return encontrado;
 }
 /*
