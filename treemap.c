@@ -115,8 +115,15 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         */
         node->pair=menorSubDerecho->pair;
         removeNode(tree,menorSubDerecho);
+        
         return;
     }
+    if (node==tree->root)
+    {
+        if (node->right!=NULL)node->right=tree->root;
+        else node->left=tree->root;
+    }
+    
     if (node->parent->right==node)
     {
         if (node->right!=NULL)
