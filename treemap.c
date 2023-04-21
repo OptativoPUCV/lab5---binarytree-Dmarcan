@@ -163,13 +163,13 @@ Para implementarla puede realizar una búsqueda normal y usar un puntero a nodo 
 
 Pair * upperBound(TreeMap * tree, void* key) {
     Pair* buscado = searchTreeMap(tree, key);
-    if (buscado != NULL) {
-        return buscado;
-    }
-    TreeNode * next=NULL;
-    next->pair=nextTreeMap(tree);
-    if (next!=NULL)return next->pair;
+    if (buscado != NULL) return buscado;
+
+    Pair* next = nextTreeMap(tree);
+    if (next != NULL) return next;
+
     return NULL;
+    
     
     /*
     TreeNode * current=tree->root;
