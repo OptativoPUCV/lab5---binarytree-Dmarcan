@@ -172,8 +172,8 @@ Pair * upperBound(TreeMap * tree, void* key) {
         if (resultadoComp==1) current=current->right;
         else
         {
+            aux=current;
             current=current->left;
-            aux=current->parent;
         }
     }
     tree->current=aux;
