@@ -168,7 +168,8 @@ Pair * upperBound(TreeMap * tree, void* key) {
             tree->current=current;
             return current->pair;
         }
-        printf("%p\n",current->pair->key);
+        printf("key current %p\n",current->pair->key);
+        printf("key map %p\n",tree->current->pair->key);
         int resultadoComp = tree->lower_than(current->pair->key,key);
         if (resultadoComp==1) current=current->right;
         else
