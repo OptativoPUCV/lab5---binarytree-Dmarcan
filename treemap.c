@@ -169,7 +169,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
             return current->pair;
         }
         printf("La clave del par es: %s\n", (char*)current->pair->key);
-        printf("La clave del par es: %s\n", (char*)key);
+        printf("La clave dsadwdel par es: %s\n", (char*)key);
         printf("key current %p\n",current->pair->key);
         //printf("key map %p\n",tree->current->pair->key);
         int resultadoComp = tree->lower_than(current->pair->key,key);
