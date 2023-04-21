@@ -49,8 +49,6 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
     TreeNode * current = tree->root;
     if (current == NULL)
     {
-        //es mas eficiente crearlo en 2 partes pero solo se va crear cuando sea necesario??
-        //o crearlo al principio de la funcion y si ya existe la clave se libera memoria del nodo??
         TreeNode * nuevo = createTreeNode(key,value);
         tree->root = nuevo;
         tree->current = nuevo;
@@ -62,10 +60,9 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
     while (current != NULL)
     {
         if (is_equal(tree,current->pair->key,key))return;
-        //tengo que actualizar el current??
         parent = current;
         resultadoComp = tree->lower_than(current->pair->key,key);
-        if (resultadoComp == 1) current=current->right;
+        if (resultadoComp == 1)current = current->right;
         else current = current->left; 
     }
     TreeNode * nuevo = createTreeNode(key,value);
@@ -83,25 +80,24 @@ TreeNode * minimum(TreeNode * x){
         if (current->left == NULL)break;
         current = current->left;
     }
-    return current;//porque no me deja sacar este return?
+    return current;
 }
 
 void removeNode(TreeMap * tree, TreeNode* node) {
-    if (node->left == NULL && node->right == NULL)//sin hijos
+    if (node->left == NULL && node->right == NULL)
     {
-        if (node->parent->right == node)node->parent->right=NULL;
+        if (node->parent->right == node)node->parent->right = NULL;
         else node->parent->left = NULL;
         free(node);
         return;
     }
-    if (node->left != NULL && node->right != NULL)//2hijos
+    if (node->left != NULL && node->right != NULL)
     {
         TreeNode * menorSubDerecho = minimum(node->right);
         node->pair = menorSubDerecho->pair;
         removeNode(tree,menorSubDerecho);
         return;
     }
-    //1hijo
     TreeNode * hijo = (node->left != NULL) ? node->left : node->right;
     if (node->parent == NULL)tree->root = hijo;
     if (node == node->parent->left)node->parent->left = hijo;
@@ -115,7 +111,7 @@ void eraseTreeMap(TreeMap * tree, void* key){
     if (tree == NULL || tree->root == NULL) return;
     if (searchTreeMap(tree, key) == NULL) return;
     TreeNode* node = tree->current;
-    removeNode(tree, node);
+    removeNode(tree,node);
 }
 
 Pair * searchTreeMap(TreeMap * tree, void* key) {
