@@ -139,6 +139,7 @@ Recuerde hacer que el current apunte al nodo encontrado.
 
 Pair * searchTreeMap(TreeMap * tree, void* key) {
     TreeNode * current=tree->root;
+    TreeNode * parent=NULL;
     while (current!=NULL)
     {
         if (is_equal(tree,current->pair->key,key)==1)
@@ -146,10 +147,12 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
             tree->current=current;
             return current->pair;
         }
+        parent=current;
         int resultadoComp = tree->lower_than(current->pair->key,key);
         if (resultadoComp==1) current=current->right;
         else current=current->left;   
     }
+    tree->current=parent;
     return NULL;
     
 }
