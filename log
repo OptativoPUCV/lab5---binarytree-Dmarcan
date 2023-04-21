@@ -655,3 +655,30 @@ treemap.c:180:21: error: initialization of ‘TreeNode *’ from incompatible po
 cc1: all warnings being treated as errors
 Compilation failed
 370556d
+Fri 21 Apr 2023 12:51:44 AM UTC: 
+ treemap.c | 1 +
+ 1 file changed, 1 insertion(+)
+In file included from test.c:4:
+treemap.c: In function ‘upperBound’:
+treemap.c:171:18: error: format ‘%c’ expects argument of type ‘int’, but argument 2 has type ‘void *’ [-Werror=format=]
+  171 |         printf("%c",current->pair->key)
+      |                 ~^  ~~~~~~~~~~~~~~~~~~
+      |                  |               |
+      |                  int             void *
+      |                 %p
+treemap.c:171:40: error: expected ‘;’ before ‘int’
+  171 |         printf("%c",current->pair->key)
+      |                                        ^
+      |                                        ;
+  172 |         int resultadoComp = tree->lower_than(current->pair->key,key);
+      |         ~~~                             
+treemap.c:173:13: error: ‘resultadoComp’ undeclared (first use in this function)
+  173 |         if (resultadoComp==1) current=current->right;
+      |             ^~~~~~~~~~~~~
+treemap.c:173:13: note: each undeclared identifier is reported only once for each function it appears in
+treemap.c:181:21: error: initialization of ‘TreeNode *’ from incompatible pointer type ‘Pair *’ [-Werror=incompatible-pointer-types]
+  181 |     TreeNode * next=nextTreeMap(tree);
+      |                     ^~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+b2d79c8
