@@ -173,7 +173,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
         else
         {
             current=current->left;
-            aux=current;
+            aux=current->parent;
         }
     }
     tree->current=aux;
