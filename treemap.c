@@ -162,6 +162,17 @@ Para implementarla puede realizar una búsqueda normal y usar un puntero a nodo 
 */
 
 Pair * upperBound(TreeMap * tree, void* key) {
+    TreeNode * buscado;
+    buscado->pair=searchTreeMap(tree,key);
+    if(buscado!=NULL)
+    {
+        return buscado->pair;
+    }
+    TreeNode * next;
+    next->pair=nextTreeMap(tree);
+    if (next!=NULL)return next->pair;
+    return NULL;
+    /*
     TreeNode * current=tree->root;
     TreeNode * aux=NULL;
     while (current!=NULL)
@@ -189,6 +200,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
     if (tree->lower_than(aux->pair->key,key)==0)return aux->pair;
     if(nextTreeMap(tree)!=NULL)return tree->current->pair;
     return NULL;
+    */
 }
 /*
 Implemente las funciones para recorrer la estructura: Pair* firstTreeMap(TreeMap* tree) retorna el primer **Pair** del mapa (el menor). Pair* nextTreeMap(TreeMap* tree)  retornar el siguiente **Pair** del mapa a partir del puntero TreeNode* current. Recuerde actualizar este puntero.

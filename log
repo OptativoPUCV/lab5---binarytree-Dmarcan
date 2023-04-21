@@ -902,3 +902,17 @@ Fri 21 Apr 2023 01:33:36 AM UTC:
  tests:  29|0
 total_score: 70/70
 8ff0435
+Fri 21 Apr 2023 01:38:26 AM UTC: 
+ treemap.c | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+In file included from test.c:4:
+test.c: In function ‘upperBound’:
+treemap.c:166:18: error: ‘buscado’ is used uninitialized [-Werror=uninitialized]
+  166 |     buscado->pair=searchTreeMap(tree,key);
+      |     ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+treemap.c:172:15: error: ‘next’ may be used uninitialized [-Werror=maybe-uninitialized]
+  172 |     next->pair=nextTreeMap(tree);
+      |     ~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+d2a27b0
