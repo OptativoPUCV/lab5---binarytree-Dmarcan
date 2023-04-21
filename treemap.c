@@ -38,30 +38,30 @@ TreeNode * createTreeNode(void* key, void * value) {
 
 TreeMap * createTreeMap(int (*lower_than) (void* key1, void* key2)) {
     TreeMap* map = (TreeMap*) malloc(sizeof(TreeMap));
-    if (map==NULL)return NULL;
-    map->root=NULL;
-    map->current=NULL;
-    map->lower_than=lower_than;
+    if (map == NULL)return NULL;
+    map->root = NULL;
+    map->current = NULL;
+    map->lower_than = lower_than;
     return map;
 }
 
 void insertTreeMap(TreeMap * tree, void* key, void * value) {
-    TreeNode * current=tree->root;
-    if (current==NULL)
+    TreeNode * current = tree->root;
+    if (current == NULL)
     {
         //es mas eficiente crearlo en 2 partes pero solo se va crear cuando sea necesario??
         //o crearlo al principio de la funcion y si ya existe la clave se libera memoria del nodo??
-        TreeNode * nuevo=createTreeNode(key,value);
-        tree->root=nuevo;
-        tree->current=nuevo;
+        TreeNode * nuevo = createTreeNode(key,value);
+        tree->root = nuevo;
+        tree->current = nuevo;
         return;
     }
 
-    int resultadoComp=0;
-    TreeNode * parent=NULL;
-    while (current!=NULL)
+    int resultadoComp = 0;
+    TreeNode * parent = NULL;
+    while (current != NULL)
     {
-        if (is_equal(tree,current->pair->key,key)==1)return;
+        if (is_equal(tree,current->pair->key,key))return;
         //tengo que actualizar el current??
         parent=current;
         resultadoComp = tree->lower_than(current->pair->key,key);
