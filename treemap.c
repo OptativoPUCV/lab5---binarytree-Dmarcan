@@ -180,6 +180,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
             current=current->left;
         }
     }
+    printf("El valor de la clave aux es: %d\n", *(int*)aux->pair->key);
     tree->current=aux;
     if (tree->lower_than(aux->pair->key,key)==0 && aux!=NULL)return aux->pair;
     if(nextTreeMap(tree)!=NULL)return tree->current->pair;
