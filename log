@@ -1039,3 +1039,13 @@ Fri 21 Apr 2023 01:58:02 AM UTC:
  tests:  29|0
 total_score: 70/70
 6c986a1
+Fri 21 Apr 2023 02:00:22 AM UTC: 
+ treemap.c | 1 +
+ 1 file changed, 1 insertion(+)
+In file included from test.c:4:
+treemap.c:179:11: error: expected ‘;’ before ‘char’
+  179 | fawefniasn
+      |           ^
+      |           ;
+Compilation failed
+7ee904e
