@@ -162,12 +162,12 @@ Para implementarla puede realizar una búsqueda normal y usar un puntero a nodo 
 */
 
 Pair * upperBound(TreeMap * tree, void* key) {
-    //TreeNode * buscado=NULL;
+    TreeNode * buscado=searchTreeMap(tree,key);
     //buscado->pair=NULL;
     //buscado->pair=searchTreeMap(tree,key);
-    if(searchTreeMap(tree,key)!=NULL)
+    if(buscado!=NULL)
     {
-        return searchTreeMap(tree,key);
+        return buscado;
     }
     TreeNode * next=NULL;
     next->pair=nextTreeMap(tree);
