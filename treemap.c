@@ -96,7 +96,6 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         TreeNode * menorSubDerecho = minimum(node->right);
         node->pair = menorSubDerecho->pair;
         removeNode(tree,menorSubDerecho);
-        free(node);
         return;
     }
     TreeNode * hijo = (node->left != NULL) ? node->left : node->right;
