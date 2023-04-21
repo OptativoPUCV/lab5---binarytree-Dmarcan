@@ -167,7 +167,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
     //buscado->pair=searchTreeMap(tree,key);
     if(buscado!=NULL)
     {
-        return buscado;
+        return buscado->pair;
     }
     TreeNode * next=NULL;
     next->pair=nextTreeMap(tree);
