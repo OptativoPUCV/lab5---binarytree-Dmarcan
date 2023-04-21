@@ -77,7 +77,7 @@ TreeNode * minimum(TreeNode * x){
     TreeNode * current = x;
     while (current != NULL)
     {
-        if (current->left == NULL)break;
+        if (current->left == NULL)return current;
         current = current->left;
     }
     return current;
