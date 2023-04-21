@@ -971,3 +971,14 @@ treemap.c:168:8: error: ‘buscado’ undeclared (first use in this function)
 treemap.c:168:8: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 40e1016
+Fri 21 Apr 2023 01:45:17 AM UTC: 
+ treemap.c | 7 ++-----
+ 1 file changed, 2 insertions(+), 5 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘upperBound’:
+treemap.c:165:25: error: initialization of ‘TreeNode *’ from incompatible pointer type ‘Pair *’ [-Werror=incompatible-pointer-types]
+  165 |     TreeNode* buscado = searchTreeMap(tree, key);
+      |                         ^~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+3ab374f
