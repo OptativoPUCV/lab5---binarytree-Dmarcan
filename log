@@ -1125,3 +1125,14 @@ Fri 21 Apr 2023 12:28:03 PM UTC:
  tests:  29|0
 total_score: 70/70
 bbcf2d8
+Fri 21 Apr 2023 12:28:29 PM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘minimum’:
+treemap.c:84:1: error: control reaches end of non-void function [-Werror=return-type]
+   84 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+2fd8ed2
