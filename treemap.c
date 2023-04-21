@@ -63,69 +63,67 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
     {
         if (is_equal(tree,current->pair->key,key))return;
         //tengo que actualizar el current??
-        parent=current;
+        parent = current;
         resultadoComp = tree->lower_than(current->pair->key,key);
-        if (resultadoComp==1) current=current->right;
-        else current=current->left; 
+        if (resultadoComp == 1) current=current->right;
+        else current = current->left; 
     }
-    TreeNode * nuevo=createTreeNode(key,value);
-    nuevo->parent=parent;
-    if (resultadoComp==1) parent->right=nuevo;
-    else parent->left=nuevo;
-    tree->current=nuevo;
+    TreeNode * nuevo = createTreeNode(key,value);
+    nuevo->parent = parent;
+    if (resultadoComp == 1) parent->right = nuevo;
+    else parent->left = nuevo;
+    tree->current = nuevo;
 }
 
 TreeNode * minimum(TreeNode * x){
-    if (x->left==NULL)return x;
-    TreeNode * current=x;
-    while (current!=NULL)
+    if (x->left == NULL)return x;
+    TreeNode * current = x;
+    while (current != NULL)
     {
-        if (current->left==NULL)return current;
-        current=current->left;
+        if (current->left == NULL)return current;
+        current = current->left;
     }
     return current;//porque no me deja sacar este return?
 }
 
 void removeNode(TreeMap * tree, TreeNode* node) {
-    if (node->left==NULL && node->right==NULL)//sin hijos
+    if (node->left == NULL && node->right == NULL)//sin hijos
     {
-        if (node->parent->right==node)node->parent->right=NULL;
-        else node->parent->left=NULL;
+        if (node->parent->right == node)node->parent->right=NULL;
+        else node->parent->left = NULL;
         free(node);
         return;
     }
-    if (node->left!=NULL && node->right!=NULL)//2hijos
+    if (node->left != NULL && node->right != NULL)//2hijos
     {
-        TreeNode * menorSubDerecho=minimum(node->right);
-        node->pair=menorSubDerecho->pair;
+        TreeNode * menorSubDerecho = minimum(node->right);
+        node->pair = menorSubDerecho->pair;
         removeNode(tree,menorSubDerecho);
         return;
     }
     //1hijo
-    TreeNode * hijo=(node->left!=NULL) ? node->left : node->right;
-    if (node->parent==NULL)tree->root=hijo;
-    if (node==node->parent->left)node->parent->left=hijo;
-    node->parent->right=hijo;
-    hijo->parent=node->parent;
+    TreeNode * hijo = (node->left != NULL) ? node->left : node->right;
+    if (node->parent == NULL)tree->root = hijo;
+    if (node == node->parent->left)node->parent->left = hijo;
+    node->parent->right = hijo;
+    hijo->parent = node->parent;
     free(node);
     return;
 }
 
 void eraseTreeMap(TreeMap * tree, void* key){
     if (tree == NULL || tree->root == NULL) return;
-
     if (searchTreeMap(tree, key) == NULL) return;
     TreeNode* node = tree->current;
     removeNode(tree, node);
-
 }
 
 Pair * searchTreeMap(TreeMap * tree, void* key) {
-    TreeNode * current=tree->root;
-    TreeNode * parent=NULL;
-    while (current!=NULL)
+    TreeNode * current = tree->root;
+    TreeNode * parent = NULL;
+    while (current != NULL)
     {
-        if (is_equal(tree,current->pair->key,key)==1)
+        if (is_equal(tree,current->pair->key,key))
         {
             tree->current=current;
             return current->pair;
