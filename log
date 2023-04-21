@@ -589,3 +589,17 @@ Fri 21 Apr 2023 12:36:14 AM UTC:
  tests:  26|1
 total_score: 60/70
 ab9674c
+Fri 21 Apr 2023 12:37:44 AM UTC: 
+ treemap.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘upperBound’:
+treemap.c:180:21: error: initialization of ‘TreeNode *’ from incompatible pointer type ‘Pair *’ [-Werror=incompatible-pointer-types]
+  180 |     TreeNode * next=nextTreeMap(tree);
+      |                     ^~~~~~~~~~~
+treemap.c:181:26: error: returning ‘TreeNode *’ from a function with incompatible return type ‘Pair *’ [-Werror=incompatible-pointer-types]
+  181 |     if(next!=NULL)return next;
+      |                          ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+35a90a1
