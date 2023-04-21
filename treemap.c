@@ -77,10 +77,10 @@ TreeNode * minimum(TreeNode * x){
     TreeNode * current = x;
     while (current != NULL)
     {
-        if (current->left == NULL)return current;
+        if (current->left == NULL)break;
         current = current->left;
     }
-    //return current;
+    return current;
 }
 
 void removeNode(TreeMap * tree, TreeNode* node) {
