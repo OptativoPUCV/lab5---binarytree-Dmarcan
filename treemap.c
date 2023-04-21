@@ -164,7 +164,7 @@ Para implementarla puede realizar una búsqueda normal y usar un puntero a nodo 
 Pair * upperBound(TreeMap * tree, void* key) {
     Pair* buscado = searchTreeMap(tree, key);
     if (buscado != NULL) return buscado;
-
+    if (tree->lower_than(tree->current->pair->key,key)==0)return tree->current->pair;
     Pair* next = nextTreeMap(tree);
     if (next != NULL) return next;
 
