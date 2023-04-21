@@ -125,15 +125,15 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
     {
         if (is_equal(tree,current->pair->key,key))
         {
-            tree->current=current;
+            tree->current = current;
             return current->pair;
         }
-        parent=current;
+        parent = current;
         int resultadoComp = tree->lower_than(current->pair->key,key);
-        if (resultadoComp==1) current=current->right;
-        else current=current->left;   
+        if (resultadoComp == 1) current = current->right;
+        else current = current->left;   
     }
-    tree->current=parent;
+    tree->current = parent;
     return NULL;
     
 }
@@ -141,7 +141,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 Pair * upperBound(TreeMap * tree, void* key) {
     Pair* buscado = searchTreeMap(tree, key);
     if (buscado != NULL) return buscado;
-    if (tree->lower_than(tree->current->pair->key,key)==0)return tree->current->pair;
+    if (!tree->lower_than(tree->current->pair->key,key))return tree->current->pair;
     Pair* next = nextTreeMap(tree);
     if (next != NULL) return next;
     return NULL;
