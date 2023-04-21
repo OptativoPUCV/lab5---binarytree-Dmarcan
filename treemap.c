@@ -177,7 +177,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
         }
     }
     tree->current=aux;
-    TreeNode * next->Pair=nextTreeMap(tree);
+    TreeNode * next=nextTreeMap(tree);
     if(next!=NULL)return next->pair;
     return NULL;
 }
