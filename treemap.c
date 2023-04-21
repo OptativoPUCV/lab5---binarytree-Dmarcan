@@ -83,7 +83,7 @@ TreeNode * minimum(TreeNode * x){
         if (current->left == NULL)return current;
         current = current->left;
     }
-    //return current;//porque no me deja sacar este return?
+    return current;//porque no me deja sacar este return?
 }
 
 void removeNode(TreeMap * tree, TreeNode* node) {
